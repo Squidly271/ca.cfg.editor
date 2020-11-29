@@ -1,0 +1,105 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "ca.cfg.editor">
+<!ENTITY author    "Andrew Zawadzki">
+<!ENTITY version   "2020.10.21">
+<!ENTITY md5       "5f5af07f67273dead2fac450bde5d500">
+<!ENTITY launch    "Tools/ConfigEdit">
+<!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
+<!ENTITY github    "Squidly271/ca.cfg.editor">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
+
+<CHANGES>
+###2020.10.21
+- Compatibility Fixes
+
+###2020.04.05
+- Multi language support
+
+###2019.07.07
+- Add stop file to preset config files
+
+###2019.03.23
+- Switch to new CA API for upgrade checks
+- Fixed: If plugin checks were never performed, update available would show
+
+###2018.01.13
+- Update icons
+
+###2018.01.04
+- CSS Fixes
+
+###2018.12.31
+- Icon was not showing properly under Azure / Grey themes
+
+###2018.11.11
+- autov update
+
+###2018.11.04
+- Fix background on file picker
+
+###2018.10.19
+- Fix broken pipe
+
+###2018.09.09
+- Allow resize of windows
+
+###2018.08.12
+- Don't wrap around long lines
+
+###2017.04.07
+- Various GUI improvements / fixes
+- Fixed: Maintain DOS / Linux line endings on original file when saving
+- Added: Switch between DOS / Linux line endings
+
+###2017.04.07
+- Changed: Scan entire flash drive for config files
+
+###2017.04.06
+- Initial Release
+</CHANGES>
+
+<FILE Run="/bin/bash">
+<INLINE>
+# Remove old 'source' files
+rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null &#124; grep -v '&version;')
+</INLINE>
+</FILE>
+
+<!--
+The 'source' file.
+-->
+<FILE Name="/boot/config/plugins/&name;/&name;-&version;-x86_64-1.txz" Run="upgradepkg --install-new">
+<URL>https://raw.github.com/&github;/master/archive/&name;-&version;-x86_64-1.txz</URL>
+<MD5>&md5;</MD5>
+</FILE>
+
+<!--
+The 'post-install' script
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "----------------------------------------------------"
+echo " &name; has been installed."
+echo " Copyright 2017, Andrew Zawadzki"
+echo " Version: &version;"
+echo "----------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+removepkg &name;-&version;-x86_64-1
+rm -rf &plugdir;
+rm -rf /boot/config/plugins/&name;
+</INLINE>
+</FILE> 
+</PLUGIN>
