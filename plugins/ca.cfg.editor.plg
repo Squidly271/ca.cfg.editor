@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2020.10.21">
-<!ENTITY md5       "5f5af07f67273dead2fac450bde5d500">
+<!ENTITY version   "2021.01.07">
+<!ENTITY md5       "32a1146e4ae3aa1618973882d5b3b85f">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
 
 <CHANGES>
+###2021.01.07
+- Ability to edit xml files on flash
+
 ###2020.10.21
 - Compatibility Fixes
 
@@ -85,7 +88,7 @@ The 'post-install' script
 echo ""
 echo "----------------------------------------------------"
 echo " &name; has been installed."
-echo " Copyright 2017, Andrew Zawadzki"
+echo " Copyright 2017-2021, Andrew Zawadzki"
 echo " Version: &version;"
 echo "----------------------------------------------------"
 echo ""

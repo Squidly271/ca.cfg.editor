@@ -43,7 +43,7 @@ function pluginScan($filename) {
       pluginScan("$filename/$cfg");
       continue;
     }
-    if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || (pathinfo($cfg,PATHINFO_EXTENSION) == "ini") || ($cfg == "go") || ($cfg == "stop") ) {
+    if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || (pathinfo($cfg,PATHINFO_EXTENSION) == "xml")|| (pathinfo($cfg,PATHINFO_EXTENSION) == "ini") || ($cfg == "go") || ($cfg == "stop") ) {
       $o .= addCfg("$filename/$cfg");
     }
   }
