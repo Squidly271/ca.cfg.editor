@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2021.01.07">
-<!ENTITY md5       "32a1146e4ae3aa1618973882d5b3b85f">
+<!ENTITY version   "2021.03.10">
+<!ENTITY md5       "8cfdef61f2f01e34778ee5b8a2494925">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
 
 <CHANGES>
+###2021.03.10
+- Permission fixes
+
 ###2021.01.07
 - Ability to edit xml files on flash
 
