@@ -41,9 +41,7 @@ switch ($_POST['action']) {
       $filedata['contents'] = str_replace("\n","\r\n",$filedata['contents']);
     }
     file_put_contents($filedata['filename'],$filedata['contents']);
-    file_put_contents("/tmp/huh","{$filedata['filename']}\n$contents");
     echo "ok";
-    file_put_contents("/tmp/huh1",print_r($filedata,true));
     break;
   case 'getBackup':
     $filename = urldecode($_POST['filename']);

@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2021.03.10">
-<!ENTITY md5       "8cfdef61f2f01e34778ee5b8a2494925">
+<!ENTITY version   "2021.04.13">
+<!ENTITY md5       "dae930481a5ed72b6bb5bf0c4c520817">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
 
 <CHANGES>
+###2021.04.13
+- Remove debugging files
+
 ###2021.03.10
 - Permission fixes
 
